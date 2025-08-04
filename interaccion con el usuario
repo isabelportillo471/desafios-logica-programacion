@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Interacciones con el Usuario</title>
+</head>
+<body>
+  <h1>Interacciones con JavaScript</h1>
+
+  <button onclick="verificarDia()">¿Qué día es?</button>
+  <button onclick="verificarNumero()">¿Positivo o Negativo?</button>
+  <button onclick="verificarPuntuacion()">Sistema de Puntuación</button>
+  <button onclick="mostrarSaldo()">Ver Saldo</button>
+  <button onclick="bienvenidaUsuario()">Bienvenida</button>
+
+  <script>
+    function verificarDia() {
+      let dia = prompt("¿Qué día de la semana es?");
+      if (dia === "Sábado" || dia === "Domingo") {
+        alert("¡Buen fin de semana!");
+      } else {
+        alert("¡Buena semana!");
+      }
+    }
+
+    function verificarNumero() {
+      let numero = parseFloat(prompt("Ingresa un número:"));
+      if (isNaN(numero)) {
+        alert("Eso no es un número válido.");
+      } else if (numero > 0) {
+        alert("El número es positivo.");
+      } else if (numero < 0) {
+        alert("El número es negativo.");
+      } else {
+        alert("El número es cero.");
+      }
+    }
+
+    function verificarPuntuacion() {
+      let puntuacion = parseInt(prompt("Ingresa tu puntuación en el juego:"));
+      if (puntuacion >= 100) {
+        alert("¡Felicidades, has ganado!");
+      } else {
+        alert("Intentalo nuevamente para ganar.");
+      }
+    }
+
+    function mostrarSaldo() {
+      let saldo = parseFloat(prompt("Ingresa tu saldo de cuenta:"));
+      if (!isNaN(saldo)) {
+        alert(`Tu saldo actual es de $${saldo.toFixed(2)}.`);
+      } else {
+        alert("Saldo no válido.");
+      }
+    }
+
+    function bienvenidaUsuario() {
+      let nombre = prompt("¿Cuál es tu nombre?");
+      alert(`¡Bienvenido/a, ${nombre}!`);
+    }
+  </script>
+</body>
+</html>
